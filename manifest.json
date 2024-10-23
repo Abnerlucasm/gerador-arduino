@@ -1,0 +1,17 @@
+{
+    "name": "Controle de Gerador",
+    "short_name": "Gerador",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f4f4f4",
+    "theme_color": "#007bff",
+    "description": "Controle remoto do Gerador via Arduino",
+    "icons": [
+      {
+        "src": "icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+  
