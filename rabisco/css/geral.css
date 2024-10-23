@@ -8,11 +8,13 @@ body{
     margin-bottom: 5vh;
     border: solid 1px;
     padding: 10vh 10vw;
+    
+}
+table{
+    margin: 0;
 }
 td{
-    border: solid 1px red;
-
-}
-tr{
-    background-color: black;
+    padding: 5vh 5vw;
+    border: solid 2px red;
+    margin: 0;
 }
