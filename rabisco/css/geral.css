@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.central{
+    margin-bottom: 5vh;
+    border: solid 1px;
+    padding: 10vh 10vw;
+}
+td{
+    border: solid 1px red;
+
+}
+tr{
+    background-color: black;
+}
