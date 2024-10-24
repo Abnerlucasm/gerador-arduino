@@ -1,6 +1,8 @@
  // Defina o endereço IP do Arduino e a porta
  const baseUrl = 'http://192.168.1.102:4001';  // Atualize o IP e porta conforme necessário
 
+
+
  // Função para enviar comandos ao backend do Arduino
  async function sendCommand(command) {
    const url = `${baseUrl}/${command}`;
@@ -26,4 +28,4 @@
  }
 
  // Atualiza os logs a cada 5 segundos
- setInterval(fetchLogs, 5000);
+ //setInterval(fetchLogs, 5000);
