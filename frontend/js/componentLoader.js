@@ -1,5 +1,3 @@
-import { carregarImagens, getBasePath, ajustarLinks } from './utils.js';
-
 async function carregarComponente(url, elementId) {
     try {
         console.log(`Tentando carregar ${url} para ${elementId}`);
@@ -38,16 +36,16 @@ async function appendComponente(url) {
 export async function carregarComponentes() {
     console.log('Iniciando carregamento dos componentes');
     
-    const basePath = getBasePath();
-    console.log('Base path:', basePath);
+    // const basePath = getBasePath();
+    // console.log('Base path:', basePath);
     
     const componentes = [
-        { url: 'components/grid.html', id: 'grid-placeholder' }
+        { url: '/frontend/componentes/grid.html', id: 'grid-placeholder' }
     ];
 
     try {
         for (const componente of componentes) {
-            const fullUrl = `${basePath}${componente.url}`;
+            const fullUrl = componente.url;
             console.log(`Tentando carregar: ${fullUrl}`);
             if (componente.append) {
                 await appendComponente(fullUrl);
@@ -55,8 +53,6 @@ export async function carregarComponentes() {
                 await carregarComponente(fullUrl, componente.id);
             }
         }
-        carregarImagens();
-        ajustarLinks();
         console.log('Todos os componentes foram carregados com sucesso');
     } catch (erro) {
         console.error('Erro ao carregar componentes:', erro);
