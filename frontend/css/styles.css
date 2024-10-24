@@ -1,3 +1,5 @@
+@import url('toggleButton.css');
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -33,3 +35,91 @@ body {
     text-align: left; /* Alinhamento à esquerda para melhor legibilidade */
     white-space: pre-wrap; /* Permite que quebras de linha sejam exibidas corretamente */
   }
+
+.container-fluid {
+  padding: 20px;
+}
+
+.grid-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.flex-column h3 {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.action-item span {
+  margin-right: 10px;
+}
+
+.toggle-container {
+  display: inline-block;
+}
+
+/* Estilos específicos para o toggle button */
+.container {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+/* ... resto do código CSS para o toggle ... */
+
+@media screen and (max-width: 768px) {
+  .flex-column {
+    flex-basis: 100%;
+  }
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.button-container span {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  #buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
