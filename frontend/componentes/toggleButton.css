@@ -1,0 +1,27 @@
+.button {
+    background-color: #d2d2d2;
+    width: 200px;
+    height: 100px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+}
+
+.button::before {
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 90px;
+    height: 90px;
+    border-radius: 200px;
+    margin: 5px;
+    transition: 0.4s;
+}
+
+#switch:checked+.button {
+    background-color: dodgerblue;
+}
+
+#switch:checked+.button::before {
+    transform: translateX(100px);
+}
