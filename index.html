@@ -11,15 +11,39 @@
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
-  <h1>Controle de Gerador</h1>
+  <div id="container">
+    <h1>Gerador Energia</h1>
+    <div id="buttons">
+      <div class="button-container">
+        <div id="btnOnOff">
+          <!-- O conteúdo de toggleButton.html será carregado aqui -->
+        </div>
+        <span>Ligar/Desligar</span>
+      </div>
+      <div class="button-container">
+        <div id="btnReiniciar">
+          <!-- O conteúdo de toggleButton.html será carregado aqui -->
+        </div>
+        <span>Reiniciar</span>
+      </div>
+      <div class="button-container">
+        <div id="btnManualAuto">
+          <!-- O conteúdo de toggleButton.html será carregado aqui -->
+        </div>
+        <span>Manual/Auto</span>
+      </div>
+    </div>
+
+    <div class="row" id="grid-placeholder">
+      <!-- Conteúdo inserido da grid aqui -->
+    </div>
+  </div>
+  <!-- <h1>Controle de Gerador</h1>
   <button onclick="sendCommand('ligar')">Ligar</button>
   <button onclick="sendCommand('desligar')">Desligar</button>
-  <button onclick="sendCommand('reiniciar')">Reiniciar</button>
-  <div id="log">Log de Retorno:</div>
-
-  <div id="grid-placeholder">
-    <!-- Conteúdo inserido da grid aqui -->
-  </div>
+  <button onclick="sendCommand('reiniciar')">Reiniciar</button> -->
+  
+  <!-- <div id="log">Log de Retorno:</div> -->
 
 </body>
 <script type="module">
