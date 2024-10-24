@@ -40,7 +40,10 @@ export async function carregarComponentes() {
     // console.log('Base path:', basePath);
     
     const componentes = [
-        { url: '/frontend/componentes/grid.html', id: 'grid-placeholder' }
+        { url: '/frontend/componentes/grid.html', id: 'grid-placeholder' },
+        { url: '/frontend/componentes/toggleButton.html', id: 'btnOnOff' },
+        { url: '/frontend/componentes/toggleButton.html', id: 'btnReiniciar' },
+        { url: '/frontend/componentes/toggleButton.html', id: 'btnManualAuto' }
     ];
 
     try {
@@ -52,6 +55,7 @@ export async function carregarComponentes() {
             } else {
                 await carregarComponente(fullUrl, componente.id);
             }
+
         }
         console.log('Todos os componentes foram carregados com sucesso');
     } catch (erro) {
