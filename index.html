@@ -17,7 +17,25 @@
   <button onclick="sendCommand('reiniciar')">Reiniciar</button>
   <div id="log">Log de Retorno:</div>
 
+  <div id="grid-placeholder">
+    <!-- Conteúdo inserido da grid aqui -->
+  </div>
+
 </body>
+<script type="module">
+  import { carregarComponentes } from '/frontend/js/componentLoader.js';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+      console.log('DOM carregado, iniciando carregamento de componentes');
+      try {
+          await carregarComponentes();
+          console.log('Componentes carregados com sucesso');
+          configurarBotaoVoltarAoTopo();
+      } catch (error) {
+          console.error('Erro ao carregar componentes:', error);
+      }
+  });
+</script>
 <script defer src="/frontend/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
