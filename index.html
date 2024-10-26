@@ -11,13 +11,55 @@
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
-  <h1>Controle de Gerador</h1>
+  <div id="container">
+    <h1>Gerador Energia</h1>
+    <div id="buttons">
+      <div class="button-container">
+        <div id="btnOnOff">
+          <!-- O conteúdo de toggleButton.html será carregado aqui -->
+        </div>
+        <span>Ligar/Desligar</span>
+      </div>
+      <div class="button-container">
+        <div id="btnReiniciar">
+          <!-- O conteúdo de toggleButton.html será carregado aqui -->
+        </div>
+        <span>Reiniciar</span>
+      </div>
+      <div class="button-container">
+        <div id="btnManualAuto">
+          <!-- O conteúdo de toggleButton.html será carregado aqui -->
+        </div>
+        <span>Manual/Auto</span>
+      </div>
+    </div>
+
+    <div class="row" id="grid-placeholder">
+      <!-- Conteúdo inserido da grid aqui -->
+    </div>
+  </div>
+  <!-- <h1>Controle de Gerador</h1>
   <button onclick="sendCommand('ligar')">Ligar</button>
   <button onclick="sendCommand('desligar')">Desligar</button>
-  <button onclick="sendCommand('reiniciar')">Reiniciar</button>
-  <div id="log">Log de Retorno:</div>
+  <button onclick="sendCommand('reiniciar')">Reiniciar</button> -->
+  
+  <!-- <div id="log">Log de Retorno:</div> -->
 
 </body>
+<script type="module">
+  import { carregarComponentes } from '/frontend/js/componentLoader.js';
+
+  document.addEventListener('DOMContentLoaded', async () => {
+      console.log('DOM carregado, iniciando carregamento de componentes');
+      try {
+          await carregarComponentes();
+          console.log('Componentes carregados com sucesso');
+          
+      } catch (error) {
+          console.error('Erro ao carregar componentes:', error);
+      }
+  });
+</script>
 <script defer src="/frontend/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>

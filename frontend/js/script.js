@@ -26,4 +26,4 @@
  }
 
  // Atualiza os logs a cada 5 segundos
- setInterval(fetchLogs, 5000);
+ //setInterval(fetchLogs, 5000);
