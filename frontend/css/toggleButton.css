@@ -1,120 +1,114 @@
-.toggle-container {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
+/* Estilo do container do switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
-.container {
-    position: relative;
-    width: 3rem;
-    height: 1.5rem;
+/* Esconde o checkbox padrão */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-#switch {
-    display: none;
+/* O slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
 }
 
-.button {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #ccc;
-    border-radius: 1.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    overflow: hidden;
+/* O círculo deslizante */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
 }
 
-.button::before {
-    content: '';
-    position: absolute;
-    top: 0.1rem;
-    left: 0.1rem;
-    width: 2.8rem;
-    height: 2.8rem;
-    border-radius: 50%;
-    background-color: white;
-    transition: transform 0.3s;
-    z-index: 2;
+/* Cor quando ativado */
+input:checked + .slider {
+  background-color: #2196F3;
 }
 
-#switch:checked + .button {
-    background-color: #4CAF50;
+/* Posição quando ativado */
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
 
-#switch:checked + .button::before {
-    transform: translateX(3rem);
+/* Bordas arredondadas */
+.slider.round {
+  border-radius: 34px;
 }
 
-.ligado, .desligado {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.6rem;
-    font-weight: bold;
-    width: 1.2rem;
-    text-align: center;
-    transition: opacity 0.3s;
+.slider.round:before {
+  border-radius: 50%;
 }
 
-.ligado {
-    right: 0.5rem;
-    color: white;
-    opacity: 0;
-}
-
-.desligado {
-    left: 0.5rem;
-    color: #333;
-    opacity: 1;
-}
-
-#switch:checked + .button .ligado {
-    opacity: 1;
-}
-
-#switch:checked + .button .desligado {
-    opacity: 0;
-}
-
+/* Responsividade para telas menores */
 @media screen and (max-width: 768px) {
-    .container {
-        width: 2.5rem;
-        height: 1.25rem;
-    }
-
-    .button::before {
-        width: 2.3rem;
-        height: 2.3rem;
-    }
-
-    #switch:checked + .button::before {
-        transform: translateX(2.5rem);
-    }
-
-    .ligado, .desligado {
-        font-size: 0.7rem;
-        width: 2rem;
-    }
+  .switch {
+    width: 50px;
+    height: 28px;
+  }
+  
+  .slider:before {
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
 }
 
-@media screen and (max-width: 480px) {
-    .container {
-        width: 2rem;
-        height: 1rem;
-    }
+/* Estilos específicos para o toggle Manual/Auto */
+#toggleManualAuto + .slider {
+  background-color: #28a745; /* Verde para Auto (estado padrão) */
+}
 
-    .button::before {
-        width: 1.8rem;
-        height: 1.8rem;
-    }
+#toggleManualAuto:checked + .slider {
+  background-color: #2196F3; /* Azul para Manual */
+}
 
-    #switch:checked + .button::before {
-        transform: translateX(2rem);
-    }
+/* Hover effects */
+#toggleManualAuto + .slider:hover {
+  background-color: #198754; /* Verde mais escuro no hover (Auto) */
+}
 
-    .ligado, .desligado {
-        font-size: 0.6rem;
-        width: 1.5rem;
-    }
+#toggleManualAuto:checked + .slider:hover {
+  background-color: #0d6efd; /* Azul mais escuro no hover (Manual) */
+}
+
+/* Opcional: Adicionar texto indicativo */
+.switch.manual-auto {
+  width: 70px; /* Um pouco mais largo para acomodar texto */
+}
+
+.switch.manual-auto .slider:before {
+  content: "A";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #28a745;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.switch.manual-auto input:checked + .slider:before {
+  content: "M";
+  color: #2196F3;
 }
