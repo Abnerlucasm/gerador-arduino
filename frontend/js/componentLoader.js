@@ -62,7 +62,7 @@ function adicionarEventListeners() {
     if (toggleOnOff) {
         toggleOnOff.addEventListener('change', function() {
             const comando = this.checked ? 'ligar' : 'desligar';
-            // Aqui você pode chamar uma função para enviar o comando, se necessário
+    
         });
     }
 
@@ -81,7 +81,7 @@ function adicionarEventListeners() {
     if (toggleManualAuto) {
         toggleManualAuto.addEventListener('change', function() {
             const comando = this.checked ? 'auto' : 'manual';
-            enviarModo(comando); // Chama a função para enviar o modo
+            enviarModo(comando); 
         });
     }
 
@@ -89,7 +89,7 @@ function adicionarEventListeners() {
     if (toggleModo) {
         toggleModo.addEventListener('change', function() {
             const comando = this.checked ? 'modoAtivo' : 'modoInativo';
-            enviarModo(comando); // Chama a função para enviar o modo
+            enviarModo(comando); 
         });
     }
 
@@ -134,7 +134,7 @@ async function enviarContato(statusId, isChecked) {
     } else if (statusId === 'chaveGerador') {
         url = `${baseUrl}/contatogerador`;
     } else if (statusId === 'chaveCombustivel') {
-        url = `${baseUrl}/contatocombustivel`; // Adicione a rota correta se necessário
+        url = `${baseUrl}/contatocombustivel`;
     }
 
     if (url) {
@@ -193,7 +193,7 @@ async function enviarModo(comando) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ modo: comando }), // Envia o comando como JSON
+            body: JSON.stringify({ modo: comando }), 
         });
 
         if (!response.ok) {
@@ -216,10 +216,10 @@ async function fetchModo() {
             throw new Error(`Erro ao buscar modo: ${response.statusText}`);
         }
         const result = await response.json();
-        // Atualiza o toggle de auto/manual com base na resposta
+        // Atualiza o toggle de auto/manual 
         const toggleManualAuto = document.getElementById('toggleManualAuto');
         if (toggleManualAuto) {
-            toggleManualAuto.checked = result.modo === 'auto'; // Supondo que a resposta tenha um campo 'modo'
+            toggleManualAuto.checked = result.modo === 'auto'; 
         }
     } catch (error) {
         console.error('Erro ao buscar modo:', error);
