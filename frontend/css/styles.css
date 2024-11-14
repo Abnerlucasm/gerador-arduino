@@ -32,8 +32,8 @@ body {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
-    text-align: left; /* Alinhamento à esquerda para melhor legibilidade */
-    white-space: pre-wrap; /* Permite que quebras de linha sejam exibidas corretamente */
+    text-align: left; 
+    white-space: pre-wrap; 
   }
 
 .container-fluid {
@@ -86,7 +86,7 @@ body {
   height: 1.5rem;
 }
 
-/* ... resto do código CSS para o toggle ... */
+
 
 @media screen and (max-width: 768px) {
   .flex-column {
@@ -122,4 +122,133 @@ body {
     align-items: center;
     gap: 30px;
   }
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.resource-label {
+  flex: 1;
+  font-weight: bold;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #dc3545; 
+  display: inline-block;
+  transition: background-color 0.3s ease; 
+}
+
+.status-indicator.active .status-circle {
+  background-color: #28a745; 
+}
+
+.status-text {
+  font-size: 0.9em;
+  color: #6c757d;
+  transition: color 0.3s ease; 
+}
+
+.status-indicator.active .status-text {
+  color: #28a745; 
+}
+
+.grid-container {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.grid-header {
+  display: flex;
+  background-color: #f8f9fa;
+  font-weight: bold;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.grid-row {
+  display: flex;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.grid-row:last-child {
+  border-bottom: none;
+}
+
+.recurso-column, .status-column {
+  padding: 12px 15px;
+}
+
+.recurso-column {
+  flex: 1;
+  border-right: 1px solid #dee2e6;
+}
+
+.status-column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #dc3545; 
+  display: inline-block;
+}
+
+.status-indicator.active .status-circle {
+  background-color: #28a745; 
+}
+
+.status-text {
+  color: #6c757d;
+}
+
+.acao-column {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 15px;
+  border-left: 1px solid #dee2e6;
+}
+
+.grid-header .acao-column {
+  justify-content: center;
+}
+
+.recurso-column {
+  flex: 1;
+}
+
+.status-column {
+  flex: 1;
+  border-left: 1px solid #dee2e6;
+}
+
+
+.acao-column .switch {
+  transform: scale(0.8);
 }
